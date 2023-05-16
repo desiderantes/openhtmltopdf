@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -10,7 +11,9 @@
   </parent>
 
   <artifactId>openhtmltopdf-core</artifactId>
-  <description>Open HTML to PDF is a CSS 2.1 renderer written in Java.  This artifact contains the core rendering and layout code.</description>
+  <description>Open HTML to PDF is a CSS 2.1 renderer written in Java. This artifact contains the core rendering and
+    layout code.
+  </description>
 
   <licenses>
     <license>
@@ -64,9 +67,15 @@
   <name>Openhtmltopdf Core Renderer</name>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${open.junit4.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${open.junit5.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>${open.junit5.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -93,7 +102,7 @@
         <configuration>
           <archive>
             <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-          </archive> 
+          </archive>
         </configuration>
       </plugin>
 
@@ -110,9 +119,9 @@
           <execution>
             <id>bundle-manifest</id>
             <phase>process-classes</phase>
-              <goals>
-                <goal>manifest</goal>
-              </goals>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>

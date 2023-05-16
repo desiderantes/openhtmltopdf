@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 public class ThymeleafProcessor {
@@ -19,7 +18,6 @@ public class ThymeleafProcessor {
         tr.setSuffix(".html");
 
         te.setTemplateResolver(tr);
-        te.addDialect(new Java8TimeDialect());
 
         return te;
     }

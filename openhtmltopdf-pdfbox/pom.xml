@@ -77,9 +77,15 @@
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${open.junit4.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${open.junit5.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>${open.junit5.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -100,7 +106,7 @@
 	  <dependency>
 		  <groupId>de.rototor.pdfbox</groupId>
 		  <artifactId>graphics2d</artifactId>
-		  <version>3.0.0-alpha2</version>
+		  <version>${pdfbox.version}</version>
 	  </dependency>
   </dependencies>
 
@@ -152,7 +158,7 @@
   </build>
 
   <properties>
-    <pdfbox.version>3.0.0-SNAPSHOT</pdfbox.version>
+    <pdfbox.version>3.0.0-alpha3</pdfbox.version>
   </properties>
 
 </project>

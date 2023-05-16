@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +15,9 @@
   <packaging>jar</packaging>
 
   <name>Openhtmltopdf PDF/A Testing</name>
-  <description>Code to test against the PDF/A standard. It is not deployed with a release and unlike the rest of the project, is licensed under the GPL.</description>
+  <description>Code to test against the PDF/A standard. It is not deployed with a release and unlike the rest of the
+    project, is licensed under the GPL.
+  </description>
 
   <licenses>
     <license>
@@ -34,18 +37,24 @@
       <artifactId>openhtmltopdf-pdfbox</artifactId>
       <version>${project.version}</version>
     </dependency>
-    
+
     <dependency>
       <!-- NOTE: VeraPDF is licensed under the GPL or MPL. -->
       <groupId>org.verapdf</groupId>
       <artifactId>validation-model</artifactId>
-      <version>1.18.8</version>
+      <version>1.22.2</version>
     </dependency>
-    
+
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${open.junit4.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${open.junit5.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>${open.junit5.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -59,7 +68,7 @@
           <skip>true</skip>
         </configuration>
       </plugin>
-      
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
@@ -68,7 +77,7 @@
         </configuration>
       </plugin>
     </plugins>
-    
+
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -80,6 +89,6 @@
           <include>LICENSE*</include>
         </includes>
       </resource>
-	</resources>
+    </resources>
   </build>
 </project>

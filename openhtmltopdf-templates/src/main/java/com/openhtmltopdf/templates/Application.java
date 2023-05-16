@@ -25,12 +25,13 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.ImageType;
 import org.apache.pdfbox.rendering.PDFRenderer;
 import org.imgscalr.Scalr;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
 import com.openhtmltopdf.templates.DataGenerator.DataProvider;
 import com.openhtmltopdf.util.XRLog;
-import com.uwyn.jhighlight.renderer.XmlXhtmlRenderer;
+import org.codelibs.jhighlight.renderer.XmlXhtmlRenderer;
 
 public class Application {
     private final PdfCreator _pdfCreator = new PdfCreator();
@@ -44,17 +45,16 @@ public class Application {
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private static String createStyles(Map styles) {
         StringBuilder sb = new StringBuilder();
-        Iterator iter = styles.entrySet().iterator();
 
-        while (iter.hasNext()) {
-            Map.Entry<String, String> entry = (Map.Entry<String, String>) iter.next();
+        for (Object o : styles.entrySet()) {
+            Map.Entry<String, String> entry = (Map.Entry<String, String>) o;
             if (entry.getKey().equals("h1")) {
                 continue;
             }
             sb.append(entry.getKey())
-              .append(" { \n")
-              .append(entry.getValue())
-              .append("}\n");
+                    .append(" { \n")
+                    .append(entry.getValue())
+                    .append("}\n");
         }
 
         return sb.toString();
@@ -72,7 +72,7 @@ public class Application {
     }
 
     private TemplateSettings getYaml(String props) {
-        Constructor cons = new Constructor(TemplateSettings.class);
+        Constructor cons = new Constructor(new LoaderOptions());
         Yaml yaml = new Yaml(cons);
         return yaml.load(props);
     }

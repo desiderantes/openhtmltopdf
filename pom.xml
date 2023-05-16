@@ -118,22 +118,22 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>3.1.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>3.0.0-M4</version>
+          <version>3.0.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
+          <version>3.11.0</version>
           <configuration>
             <compilerArgs>
               <arg>-Xlint:deprecation</arg>
@@ -148,17 +148,17 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.5.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>5.1.2</version>
+          <version>5.1.8</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -199,7 +199,7 @@
         <configuration>
           <source>8</source>
           <doclint>none</doclint>
-          <additionalparam>${javadoc.opts}</additionalparam>
+          <additionalOptions>${javadoc.opts}</additionalOptions>
         </configuration>
         <executions>
           <execution>
@@ -214,16 +214,18 @@
   </build>
 
   <properties>
-    <open.batik.version>1.14</open.batik.version>
+    <open.batik.version>1.16</open.batik.version>
 
     <!-- Please keep xmlgraphics-commons up to date with batik. -->
-    <open.xmlgraphics.commons.version>2.6</open.xmlgraphics.commons.version>
+    <open.xmlgraphics.commons.version>2.8</open.xmlgraphics.commons.version>
 
     <!-- NOTE: Rhino is an optional dependency of Batik-Bridge. This version should match
          the version specified by Batik-Bridge. -->
-    <open.rhino.version>1.7.13</open.rhino.version>
-
-    <open.junit4.version>4.13.1</open.junit4.version>
+    <open.rhino.version>1.7.14</open.rhino.version>
+    <open.junit5.version>5.9.3</open.junit5.version>
+    <jfeechart.version>1.5.4</jfeechart.version>
+    <zxing.javase.version>3.5.1</zxing.javase.version>
+    <slf4j.version>2.0.7</slf4j.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

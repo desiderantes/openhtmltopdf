@@ -50,6 +50,6 @@ public class ArrayUtil {
      * Joins a string array, with the given separator.
      */
     public static String join(String[] partials, String separator) {
-        return Arrays.stream(partials).collect(Collectors.joining(separator));
+        return String.join(separator, partials);
     }
 }
